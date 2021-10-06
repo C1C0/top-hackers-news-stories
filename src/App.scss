@@ -1,2 +1,25 @@
+@import "./Styles/scss/variables.scss";
+@import "./Styles/scss/custom.scss";
 @import "~bootstrap/scss/bootstrap";
-@import "./Styles/scss/custom.scss"
+
+/** FONT SETTINGS **/
+@font-face {
+    font-family: 'Petrona';
+    src: url("./Styles/Fonts/Petrona-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Petrona-Italic';
+    src: url("./Styles/Fonts/Petrona-Italic-VariableFont_wght.ttf") format('truetype');
+    font-style: italic;
+}
+
+/** OTHER SETTINGS **/
+*{
+    font-family: "Petrona";
+    color: $defaultTextColor;
+}
+
+body{
+    background-color: $backgroundColor;
+}

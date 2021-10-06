@@ -1,12 +1,18 @@
+/** @jsxRuntime classic */
+
 import "./App.scss";
 import { Container } from "react-bootstrap";
+
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react";
+import { Header } from "./Components/Header/Header";
+import { Stories } from "./Components/Stories/Stories";
 
 function App() {
   return (
     <Container className="App">
-      <header className="App-header">
-        <p>test</p>
-      </header>
+      <Header title="Hacker News" mantra="Top stories from the world of hacking"/>
+      <Stories />
     </Container>
   );
 }
