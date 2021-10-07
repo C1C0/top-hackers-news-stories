@@ -55,7 +55,7 @@ const ByP = styled.p`
   margin: 0;
   font-size: 1.1em;
 
-  + a {
+  + a{
     text-decoration: none;
   }
 `;

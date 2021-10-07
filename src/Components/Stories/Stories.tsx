@@ -1,11 +1,27 @@
 import styled from "@emotion/styled";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
 import { State } from "../../State/reducers/reducers";
 import { Story } from "../Story/Story";
+import * as StoriesLogic from "./StoriesLogic";
+import * as storiesCreators from "../../State/actions/storiesCreators";
 
 export const Stories: React.FC = () => {
   const stories = useSelector((state: State) => state.stories);
+  const dispatch = useDispatch();
+  const { setStories } = bindActionCreators(storiesCreators, dispatch);
+
+  useEffect(() => {
+    (async () => {
+      const stories = await StoriesLogic.getTopStories();
+
+      console.log(stories);
+      
+
+      setStories(stories);
+    })();
+  }, []);
 
   return (
     <StoriesWrapper>
@@ -19,7 +35,7 @@ export const Stories: React.FC = () => {
           title={story.title}
           time={story.time}
           text={story.text}
-          />
+        />
       ))}
     </StoriesWrapper>
   );

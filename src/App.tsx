@@ -8,10 +8,10 @@ import { css, jsx } from "@emotion/react";
 import { Header } from "./Components/Header/Header";
 import { Stories } from "./Components/Stories/Stories";
 
-function App() {
+function App() { 
   return (
     <Container className="App">
-      <Header title="Hacker News" mantra="Top stories from the world of hacking"/>
+      <Header title={process.env.REACT_APP_APP_TITLE || ""} mantra={process.env.REACT_APP_APP_MANTRA}/>
       <Stories />
     </Container>
   );
