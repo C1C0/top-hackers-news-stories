@@ -55,7 +55,5 @@ const getHNAPI = (): string => {
 };
 
 const orderStoriesByScore = (stories: Story[]): Story[] => {
-  return stories.sort((a:Story, b:Story):number => {
-    return b.score - a.score ;
-  })
+  return stories.sort((a: Story, b: Story): number => {
 };
