@@ -2,29 +2,9 @@ import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { ColorPallete } from "../../Shared/design";
-import * as fromInterfaces from "../../Shared/interfaces"
+import * as fromInterfaces from "../../Shared/interfaces";
 import { Hr } from "../SharableComponents/HR";
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-interface Props {
-  title: string;
-  from: string;
-  timestamp: string;
-  text: string;
-}
-=======
->>>>>>> Redux-implementation
-
-export const Story: React.FC<fromInterfaces.Story> = ({ title, by, time, text }) => {
-  return (
-    <StoryBackground>
-      <ByP>{by}</ByP>
-      <TitleP>{title}</TitleP>
-      <TimestampP>{time}</TimestampP>
-      <Hr />
-      <div>{text}</div>
-=======
 export const Story: React.FC<fromInterfaces.Story> = ({
   title,
   by,
@@ -59,12 +39,11 @@ export const Story: React.FC<fromInterfaces.Story> = ({
           </div>
         </>
       )}
->>>>>>> Stashed changes
     </StoryBackground>
   );
 };
 
-const StoryBackground = styled.p`
+const StoryBackground = styled.div`
   background-color: ${ColorPallete.backgroundCard1};
   box-shadow: 5px 10px 5px ${ColorPallete.defaultCardShadow};
   padding: 28px 40px;
@@ -74,28 +53,28 @@ const StoryBackground = styled.p`
 const ByP = styled.p`
   color: ${ColorPallete.mainSaturated};
   margin: 0;
-<<<<<<< Updated upstream
-  font-size: 1.1em
-=======
   font-size: 1.1em;
 
   + a {
     text-decoration: none;
   }
->>>>>>> Stashed changes
 `;
 
 const TitleP = styled.p`
   color: ${ColorPallete.main};
   margin: 10px 0 0;
   font-size: 1.56em;
+
+  cursor: pointer;
+
+  transition: transform 0.1s ease, text-shadow 0.1s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    text-shadow: 10px 15px 10px ${ColorPallete.defaultTextShadow};
+  }
 `;
 
-<<<<<<< Updated upstream
-const TimestampP = styled.p`
-  color: ${ColorPallete.mainDarker};
-  font-size: .8em;
-=======
 const UnderTitleWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -106,7 +85,6 @@ const underlineItems = styled.p`
   margin-top: 5px;
   font-size: 0.9em;
   font-style: italic;
->>>>>>> Stashed changes
 `;
 
 const TimestampP = styled(underlineItems)`

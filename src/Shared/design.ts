@@ -4,12 +4,8 @@ export enum ColorPallete {
 
   defaultTextColor = "#DBDBDB",
 
-<<<<<<< Updated upstream
-    defaultCardShadow = "#0000000d",
-=======
   defaultCardShadow = "#0000000d",
   defaultTextShadow = "#000000af",
->>>>>>> Stashed changes
 
   mainSaturated = "#FFB33A",
   main = "#FED086",
