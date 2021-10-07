@@ -61,14 +61,14 @@ const ByP = styled.p`
 `;
 
 const TitleLink = styled.a`
-  width: max-content;
+  width: fit-content;
 `;
 
 const TitleP = styled.p`
   color: ${ColorPallete.main};
   margin: 10px 0 0;
   font-size: 1.56em;
-  width: max-content;
+  width: fit-content;
 
   cursor: pointer;
 
