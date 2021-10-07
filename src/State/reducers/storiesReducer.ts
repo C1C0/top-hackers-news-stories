@@ -4,7 +4,7 @@ import { Action, StoriesActionType } from "../actions/storiesTypes";
 const inistialState: Story[] = [
   {
     by: "dhouston",
-    id: 8863,
+    id: 8864,
     score: 111,
     time: 1175714200,
     title: "My YC app: Dropbox - Throw away your USB drive",
@@ -21,7 +21,7 @@ const inistialState: Story[] = [
   },
   {
     by: "dhouston",
-    id: 8863,
+    id: 8862,
     score: 111,
     time: 1175714200,
     title: "My YC app: Dropbox - Throw away your USB drive",

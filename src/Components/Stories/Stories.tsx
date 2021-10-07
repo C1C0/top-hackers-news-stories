@@ -1,50 +1,26 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { useSelector } from "react-redux";
+import { State } from "../../State/reducers/reducers";
 import { Story } from "../Story/Story";
 
 export const Stories: React.FC = () => {
+  const stories = useSelector((state: State) => state.stories);
+
   return (
     <StoriesWrapper>
-      <Story
-        key={43242}
-        id={43242}
-        url="fdskljfl"
-        score={342}
-        by="dHustom4369"
-        title="Title"
-        time={1175714200}
-        text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
-      />
-      <Story
-        key={43242}
-        id={43242}
-        url="fdskljfl"
-        score={342}
-        by="dHustom4369"
-        title="Title"
-        time={1175714200}
-        text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
-      />
-      <Story
-        key={43242}
-        id={43242}
-        url="fdskljfl"
-        score={342}
-        by="dHustom4369"
-        title="Title"
-        time={1175714200}
-        text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
-      />
-      <Story
-        key={43242}
-        id={43242}
-        url="fdskljfl"
-        score={342}
-        by="dHustom4369"
-        title="Title"
-        time={1175714200}
-        text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
-      />
+      {stories.map((story) => (
+        <Story
+          key={story.id}
+          id={story.id}
+          url={story.url}
+          score={story.score}
+          by={story.by}
+          title={story.title}
+          time={story.time}
+          text={story.text}
+          />
+      ))}
     </StoriesWrapper>
   );
 };
