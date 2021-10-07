@@ -5,6 +5,7 @@ export enum ColorPallete{
     defaultTextColor = "#DBDBDB",
 
     defaultCardShadow = "#0000000d",
+    defaultTextShadow = "#000000af",
 
     mainSaturated = "#FFB33A",
     main = "#FED086",

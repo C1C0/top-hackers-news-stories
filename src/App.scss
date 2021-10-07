@@ -23,3 +23,14 @@
 body{
     background-color: $backgroundColor;
 }
+
+a{
+    text-decoration: none;
+    color: $defaultTextColor;
+    font-weight: bold;
+
+    &:hover{
+        color:$defaultTextColor;
+        text-decoration: underline;
+    }
+}
