@@ -7,13 +7,12 @@ import { Story } from "../Story/Story";
 import * as StoriesLogic from "./StoriesLogic";
 import * as storiesCreators from "../../State/actions/stories/storiesCreators";
 import * as spinnerCreators from "../../State/actions/spinner/spinnerCreators";
-import { ActivateSpinner } from "../../State/actions/spinner/spinnerCreators";
 
 export const Stories: React.FC = () => {
   const stories = useSelector((state: State) => state.stories);
   const dispatch = useDispatch();
   const { setStories } = bindActionCreators(storiesCreators, dispatch);
-  const { ActivateSpinner, DeactivateSpinner } = bindActionCreators(spinnerCreators, dispatch);
+  const { DeactivateSpinner } = bindActionCreators(spinnerCreators, dispatch);
 
   useEffect(() => {
     (async () => {
