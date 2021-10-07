@@ -1,23 +1,31 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { ColorPallete } from "../../Shared/design";
-import * as fromInterfaces from "../../Shared/interfaces"
+import * as fromInterfaces from "../../Shared/interfaces";
 import { Hr } from "../SharableComponents/HR";
 
-
-export const Story: React.FC<fromInterfaces.Story> = ({ title, by, time, text }) => {
+export const Story: React.FC<fromInterfaces.Story> = ({
+  title,
+  by,
+  time,
+  text,
+}) => {
   return (
     <StoryBackground>
       <ByP>{by}</ByP>
       <TitleP>{title}</TitleP>
       <TimestampP>{time}</TimestampP>
-      <Hr />
-      <div>{text}</div>
+      {text && (
+        <>
+          <Hr />
+          <div>{text}</div>
+        </>
+      )}
     </StoryBackground>
   );
 };
 
-const StoryBackground = styled.p`
+const StoryBackground = styled.div`
   background-color: ${ColorPallete.backgroundCard1};
   box-shadow: 5px 10px 5px ${ColorPallete.defaultCardShadow};
   padding: 28px 40px;
@@ -27,7 +35,7 @@ const StoryBackground = styled.p`
 const ByP = styled.p`
   color: ${ColorPallete.mainSaturated};
   margin: 0;
-  font-size: 1.1em
+  font-size: 1.1em;
 `;
 
 const TitleP = styled.p`
@@ -38,5 +46,5 @@ const TitleP = styled.p`
 
 const TimestampP = styled.p`
   color: ${ColorPallete.mainDarker};
-  font-size: .8em;
+  font-size: 0.8em;
 `;
