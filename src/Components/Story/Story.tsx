@@ -64,6 +64,7 @@ const TitleP = styled.p`
   color: ${ColorPallete.main};
   margin: 10px 0 0;
   font-size: 1.56em;
+  width: max-content;
 
   cursor: pointer;
 
