@@ -16,9 +16,9 @@ export const Story: React.FC<fromInterfaces.Story> = ({
   return (
     <StoryBackground>
       <ByP>{by}</ByP>
-      <a href={url}>
+      <TitleLink href={url}>
         <TitleP>{title}</TitleP>
-      </a>
+      </TitleLink>
       <UnderTitleWrapper>
         <TimestampP>
           {new Date(time).toLocaleDateString("en-US", {
@@ -55,9 +55,13 @@ const ByP = styled.p`
   margin: 0;
   font-size: 1.1em;
 
-  + a{
+  + a {
     text-decoration: none;
   }
+`;
+
+const TitleLink = styled.a`
+  width: max-content;
 `;
 
 const TitleP = styled.p`
@@ -95,11 +99,11 @@ const TimestampP = styled(underlineItems)`
 const ScoreP = styled(underlineItems)`
   color: ${ColorPallete.secondaryColor};
 
-  &:before{
-    content: '[\\00a0';
+  &:before {
+    content: "[\\00a0";
   }
 
-  &:after{
-    content: '\\00a0]';
+  &:after {
+    content: "\\00a0]";
   }
 `;
