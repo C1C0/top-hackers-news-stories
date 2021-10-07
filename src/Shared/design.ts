@@ -1,12 +1,19 @@
-export enum ColorPallete{
-    backgroundColor = "#242424",
-    backgroundCard1 = "#363636",
+export enum ColorPallete {
+  backgroundColor = "#242424",
+  backgroundCard1 = "#363636",
 
-    defaultTextColor = "#DBDBDB",
+  defaultTextColor = "#DBDBDB",
 
+<<<<<<< Updated upstream
     defaultCardShadow = "#0000000d",
+=======
+  defaultCardShadow = "#0000000d",
+  defaultTextShadow = "#000000af",
+>>>>>>> Stashed changes
 
-    mainSaturated = "#FFB33A",
-    main = "#FED086",
-    mainDarker = "#D2A356",
+  mainSaturated = "#FFB33A",
+  main = "#FED086",
+  mainDarker = "#D2A356",
+
+  secondaryColor = "#FF8515",
 }
