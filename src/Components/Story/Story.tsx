@@ -12,10 +12,13 @@ export const Story: React.FC<fromInterfaces.Story> = ({
   text,
   url,
   score,
+  authorKarma,
 }) => {
   return (
     <StoryBackground>
-      <ByP>{by}</ByP>
+      <ByP>
+        {by}&nbsp;&nbsp;<KarmaP>{authorKarma}</KarmaP>
+      </ByP>
       <TitleLink href={url}>
         <TitleP>{title}</TitleP>
       </TitleLink>
@@ -29,7 +32,7 @@ export const Story: React.FC<fromInterfaces.Story> = ({
             minute: "2-digit",
           })}
         </TimestampP>
-        <ScoreP title="score">{score}</ScoreP>
+        <ScoreP title="Story Score">{score}</ScoreP>
       </UnderTitleWrapper>
       {text && (
         <>
@@ -57,6 +60,16 @@ const ByP = styled.p`
 
   + a {
     text-decoration: none;
+  }
+`;
+
+const KarmaP = styled.span`
+  color: ${ColorPallete.defaultTextColor};
+  margin-left: .5rem;
+  font-size: .8em;
+
+  &:before{
+    content: "Karma:\\00a0"
   }
 `;
 

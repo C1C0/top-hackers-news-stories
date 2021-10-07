@@ -36,6 +36,7 @@ export const Stories: React.FC = () => {
           title={story.title}
           time={story.time}
           text={story.text}
+          authorKarma={story.authorKarma}
         />
       ))}
     </StoriesWrapper>

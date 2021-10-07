@@ -1,4 +1,4 @@
-import { Story } from "../../Shared/interfaces";
+import { Story, User } from "../../Shared/interfaces";
 
 /**
  * @return sorted stories
@@ -39,6 +39,10 @@ const getRandomTopStories = async (
   for (let i = 0; i < xSelectedStories; i++) {
     const randomIndex = Math.round(Math.random() * lengthOfTopStories + 1);
     const story = await fetchStoryData(topStories[randomIndex]);
+    const author = await fetchStoryAuthor(story.by);
+
+    story.authorKarma = author.karma;
+
     selectedStories.push(story);
   }
 
@@ -81,3 +85,14 @@ const orderStoriesByScore = (stories: Story[]): Story[] => {
     return a.score - b.score;
   });
 };
+
+/**
+ * Fetches data about author
+ * 
+ * @param authorName
+ * @returns 
+ */
+const fetchStoryAuthor = async (authorName: string): Promise<User> => {
+  const story = await fetch(`${getHNAPI()}/user/${authorName}.json`);
+  return await story.json();
+}
