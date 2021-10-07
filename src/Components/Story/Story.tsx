@@ -1,21 +1,16 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { ColorPallete } from "../../Shared/design";
+import * as fromInterfaces from "../../Shared/interfaces"
 import { Hr } from "../SharableComponents/HR";
 
-interface Props {
-  title: string;
-  from: string;
-  timestamp: string;
-  text: string;
-}
 
-export const Story: React.FC<Props> = ({ title, from, timestamp, text }) => {
+export const Story: React.FC<fromInterfaces.Story> = ({ title, by, time, text }) => {
   return (
     <StoryBackground>
-      <FromP>{from}</FromP>
+      <ByP>{by}</ByP>
       <TitleP>{title}</TitleP>
-      <TimestampP>{timestamp}</TimestampP>
+      <TimestampP>{time}</TimestampP>
       <Hr />
       <div>{text}</div>
     </StoryBackground>
@@ -29,7 +24,7 @@ const StoryBackground = styled.p`
   margin-bottom: 40px;
 `;
 
-const FromP = styled.p`
+const ByP = styled.p`
   color: ${ColorPallete.mainSaturated};
   margin: 0;
   font-size: 1.1em

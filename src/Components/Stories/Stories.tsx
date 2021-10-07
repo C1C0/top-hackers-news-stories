@@ -6,27 +6,43 @@ export const Stories: React.FC = () => {
   return (
     <StoriesWrapper>
       <Story
-        from="dHustom4369"
+        key={43242}
+        id={43242}
+        url="fdskljfl"
+        score={342}
+        by="dHustom4369"
         title="Title"
-        timestamp="01.01.1990 at 14:34"
+        time={1175714200}
         text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
       />
       <Story
-        from="dHustom4369"
+        key={43242}
+        id={43242}
+        url="fdskljfl"
+        score={342}
+        by="dHustom4369"
         title="Title"
-        timestamp="01.01.1990 at 14:34"
+        time={1175714200}
         text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
       />
-            <Story
-        from="dHustom4369"
+      <Story
+        key={43242}
+        id={43242}
+        url="fdskljfl"
+        score={342}
+        by="dHustom4369"
         title="Title"
-        timestamp="01.01.1990 at 14:34"
+        time={1175714200}
         text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
       />
-            <Story
-        from="dHustom4369"
+      <Story
+        key={43242}
+        id={43242}
+        url="fdskljfl"
+        score={342}
+        by="dHustom4369"
         title="Title"
-        timestamp="01.01.1990 at 14:34"
+        time={1175714200}
         text="Aw shucks, guys ... you make me blush with your compliments.<p>Tell you what, Ill make a deal: I'll keep writing if you keep reading. K? </p>... Read more"
       />
     </StoriesWrapper>
