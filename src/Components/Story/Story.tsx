@@ -2,8 +2,10 @@ import { css, jsx } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { ColorPallete } from "../../Shared/design";
+import * as fromInterfaces from "../../Shared/interfaces"
 import { Hr } from "../SharableComponents/HR";
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 interface Props {
   title: string;
@@ -11,13 +13,15 @@ interface Props {
   timestamp: string;
   text: string;
 }
+=======
+>>>>>>> Redux-implementation
 
-export const Story: React.FC<Props> = ({ title, from, timestamp, text }) => {
+export const Story: React.FC<fromInterfaces.Story> = ({ title, by, time, text }) => {
   return (
     <StoryBackground>
-      <FromP>{from}</FromP>
+      <ByP>{by}</ByP>
       <TitleP>{title}</TitleP>
-      <TimestampP>{timestamp}</TimestampP>
+      <TimestampP>{time}</TimestampP>
       <Hr />
       <div>{text}</div>
 =======
@@ -67,7 +71,7 @@ const StoryBackground = styled.p`
   margin-bottom: 40px;
 `;
 
-const FromP = styled.p`
+const ByP = styled.p`
   color: ${ColorPallete.mainSaturated};
   margin: 0;
 <<<<<<< Updated upstream
