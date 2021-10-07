@@ -5,9 +5,9 @@ import { Story } from "../../Shared/interfaces";
  */
 export const getTopStories = async () => {
   const allTopStories = await fetchTopStories();
-  const topStories = getRandomTopStories(10, allTopStories);
+  const topStories = await getRandomTopStories(10, allTopStories);
 
-  return topStories;
+  return orderStoriesByScore(topStories);
 };
 
 const fetchTopStories = async () => {
@@ -30,7 +30,6 @@ const getRandomTopStories = async (
     const story = await fetchStoryData(topStories[randomIndex]);
 
     console.log(story);
-    
 
     selectedStories.push(story);
   }
@@ -53,4 +52,10 @@ const getHNAPI = (): string => {
     console.error("REACT_APP_HACKER_NEWS_API not provided");
     return "";
   }
+};
+
+const orderStoriesByScore = (stories: Story[]): Story[] => {
+  return stories.sort((a:Story, b:Story):number => {
+    return b.score - a.score ;
+  })
 };

@@ -19,9 +19,6 @@ export const Stories: React.FC = () => {
     (async () => {
       const stories = await StoriesLogic.getTopStories();
 
-      console.log(stories);
-      
-
       setStories(stories);
 
       DeactivateSpinner();
