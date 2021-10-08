@@ -1,3 +1,6 @@
+/**
+ * Defines fetched story
+ */
 export interface Story {
   by: string;
   id: number;
@@ -9,6 +12,9 @@ export interface Story {
   authorKarma: number;
 }
 
+/**
+ * Defines fetched user
+ */
 export interface User {
   id: string;
   created: number;

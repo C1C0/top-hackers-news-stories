@@ -1,3 +1,6 @@
+/**
+ * Colour pallete to use
+ */
 export enum ColorPallete {
   backgroundColor = "#242424",
   backgroundCard1 = "#363636",

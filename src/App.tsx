@@ -1,10 +1,5 @@
-/** @jsxRuntime classic */
-
 import "./App.scss";
 import { Container } from "react-bootstrap";
-
-/** @jsx jsx */
-import { css, jsx } from "@emotion/react";
 import { Header } from "./Components/Header/Header";
 import { Stories } from "./Components/Stories/Stories";
 import LoadingSpinner from "./Components/LoadingSpinner/LoadingSpinner";

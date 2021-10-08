@@ -35,15 +35,28 @@ const getRandomTopStories = async (
 ): Promise<Story[]> => {
   let selectedStories: Story[] = [];
   let lengthOfTopStories: number = topStories.length;
+  let alreadySelectedStories: number[] = [];
 
-  for (let i = 0; i < xSelectedStories; i++) {
+  for (let i = 0; i < xSelectedStories;) {
     const randomIndex = Math.round(Math.random() * lengthOfTopStories + 1);
-    const story = await fetchStoryData(topStories[randomIndex]);
-    const author = await fetchStoryAuthor(story.by);
+    const selectedStoryId = topStories[randomIndex];
 
+    // Check if this story wasn't selected before
+    if(alreadySelectedStories.includes(selectedStoryId)){
+      continue;
+    }
+
+    // add selected story to array of already selected stories
+    alreadySelectedStories.push(selectedStoryId);
+
+    // fetch all the data
+    const story = await fetchStoryData(selectedStoryId);
+    const author = await fetchStoryAuthor(story.by);
     story.authorKarma = author.karma;
 
     selectedStories.push(story);
+
+    i++;
   }
 
   return selectedStories;
@@ -88,11 +101,11 @@ const orderStoriesByScore = (stories: Story[]): Story[] => {
 
 /**
  * Fetches data about author
- * 
+ *
  * @param authorName
- * @returns 
+ * @returns
  */
 const fetchStoryAuthor = async (authorName: string): Promise<User> => {
   const story = await fetch(`${getHNAPI()}/user/${authorName}.json`);
   return await story.json();
-}
+};
