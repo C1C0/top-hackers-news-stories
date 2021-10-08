@@ -48,11 +48,12 @@ const getRandomTopStories = async (
 
     // add selected story to array of already selected stories
     alreadySelectedStories.push(selectedStoryId);
+    
 
     // fetch all the data
     const story = await fetchStoryData(selectedStoryId);
     const author = await fetchStoryAuthor(story.by);
-    story.authorKarma = author.karma;
+    story.authorKarma = author.karma;    
 
     selectedStories.push(story);
 

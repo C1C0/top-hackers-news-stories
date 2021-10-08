@@ -10,6 +10,7 @@ import {
   TitleP,
   UnderTitleWrapper,
 } from "./StoryStyleComponents";
+import parse from "html-react-parser";
 import * as fromInterfaces from "../../Shared/interfaces";
 
 export const Story: React.FC<fromInterfaces.Story> = ({
@@ -44,9 +45,8 @@ export const Story: React.FC<fromInterfaces.Story> = ({
       {text && (
         <>
           <Hr />
-          <div>
-            {text} <a href={url}>Read more</a>
-          </div>
+          <div>{parse(text)}</div>
+          {url && <a href={url}>Read more</a>}
         </>
       )}
     </StoryBackground>

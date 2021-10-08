@@ -8,7 +8,7 @@ export interface Story {
   time: number;
   title: string;
   text?: string;
-  url: string;
+  url?: string;
   authorKarma: number;
 }
 
