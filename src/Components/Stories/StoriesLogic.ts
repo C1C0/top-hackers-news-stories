@@ -5,7 +5,7 @@ import { Story, User } from "../../Shared/interfaces";
  */
 export const getTopStories = async (): Promise<Story[]> => {
   const allTopStories = await fetchTopStories();
-  const topStories = await getRandomTopStories(10, allTopStories);
+  const topStories = await getRandomTopStories(parseInt(process.env.REACT_APP_MAX_TOP_STORIES || "10"), allTopStories);
 
   return orderStoriesByScore(topStories);
 };
